@@ -70,6 +70,7 @@ export async function sendMail(data: Data) {
     return {
       success: false,
       message: "Failed to send email",
+      error
     };
   }
 }
