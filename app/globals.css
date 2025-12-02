@@ -12,10 +12,6 @@ body,
   scroll-behavior: smooth;
 }
 
-.glass-blur {
-  @apply after:absolute after:inset-0 after:-z-[5] after:size-full after:bg-[rgba(255,255,255,0.1)] after:backdrop-blur-[3px];
-}
-
 .title {
   @apply mb-7 mt-2 w-fit -rotate-6 cursor-default border-b-4 border-green-400 text-4xl font-bold hover:-rotate-12 hover:transition-all hover:duration-300 sm:ml-8 lg:mb-0;
 }

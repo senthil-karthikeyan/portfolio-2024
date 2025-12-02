@@ -26,8 +26,9 @@ type Data = {
   message: string;
 };
 
-export async function sendMail(data: Data) {
+export async function sendEmail(data: Data) {
   try {
+    console.log({ data });
     const { name, email, message } = data;
     const accessToken = (await oAuth2Client.getAccessToken()) as string;
 
@@ -62,6 +63,7 @@ export async function sendMail(data: Data) {
       html: template,
     };
     await transporter.sendMail(mailOptions);
+
     return {
       success: true,
       message: "Email sent successfully",
@@ -70,7 +72,7 @@ export async function sendMail(data: Data) {
     return {
       success: false,
       message: "Failed to send email",
-      error
+      // error,
     };
   }
 }

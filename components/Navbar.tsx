@@ -16,15 +16,15 @@ export const Navbar = () => {
   const link = linksData.links;
   const socialLink = [
     {
-      link: "https://github.com/senthil-developer",
+      link: "https://github.com/senthil-karthikeyan",
       icon: GitHubLogoIcon,
     },
     {
-      link: "https://www.linkedin.com/in/senthil-developer",
+      link: "https://www.linkedin.com/in/senthil-karthikeyan",
       icon: LinkedInLogoIcon,
     },
     {
-      link: "mailto:senthildeveloper4@gmail.com",
+      link: "mailto:senthil.karthikeyan.official@gmail.com",
       icon: Mail,
     },
   ];
