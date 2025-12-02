@@ -45,17 +45,40 @@ export async function sendEmail(data: Data) {
     });
 
     const template = `
-  <html>
-  <body>
-  <h2>Client mailed</h2>
-  <h3><strong>Name :</strong> ${name.toUpperCase()}</h3>
-  <p><strong>Email :</strong> ${email}</p>
-  <p><strong>Message :</strong>
-  <span>${message}</span>
-  </p>
+   <html>
+  <head>
+    <title>Client Mail</title>
+  </head>
+
+  <body style="margin:0; padding:0; background:#f7f7f7; font-family:Arial, sans-serif;">
+
+    <div style="max-width:600px; margin:30px auto; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+
+      <div style="background:#4A90E2; padding:20px; text-align:center; color:white;">
+        <h2 style="margin:0; font-size:22px; letter-spacing:0.5px;">Client Message</h2>
+      </div>
+
+      <div style="padding:25px;">
+
+        <h3 style="margin-top:0; font-size:18px; color:#333;">
+          <strong>Name:</strong> ${name}
+        </h3>
+        <p style="font-size:15px; color:#555; margin:8px 0;">
+          <strong>Email:</strong> ${email}
+        </p>
+
+        <p style="font-size:15px; color:#555; margin:15px 0 5px 0;">
+          <strong>Message:</strong>
+        </p>
+        <div style="background:#fafafa; border-left:4px solid #4A90E2; padding:12px 14px; font-size:14px; color:#444; border-radius:4px;">
+          ${message}
+        </div>
+      </div>
+    </div>
   </body>
-  </html>
+</html>
   `;
+
     const mailOptions: nodemailer.SendMailOptions = {
       from: authEmail,
       to: creatorEmail,
